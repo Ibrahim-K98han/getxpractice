@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Page'),
+        title: const Text('Home Page'),
       ),
       body: Center(
         child: Column(
@@ -21,22 +21,24 @@ class HomePage extends StatelessWidget {
             GetBuilder<CounterController>(builder: (counterController) {
               return Text(
                 counterController.count.toString(),
-                style: TextStyle(fontSize: 30),
+                style: const TextStyle(fontSize: 30),
               );
             }),
             ElevatedButton(
                 onPressed: () {
                   counterController.addCount();
                 },
-                child: Text('Add')),
+                child: const Text('Add')),
             ElevatedButton(
                 onPressed: () {
                   counterController.minusCount();
                 },
-                child: Text('Minus')),
-            ElevatedButton(onPressed: () {
-              Get.to(const SecondPage());
-            }, child: const Text('Second Page'))
+                child: const Text('Minus')),
+            ElevatedButton(
+                onPressed: () {
+                  Get.to(SecondPage());
+                },
+                child: const Text('Second Page'))
           ],
         ),
       ),
